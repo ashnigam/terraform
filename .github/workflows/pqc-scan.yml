@@ -30,6 +30,7 @@ jobs:
           severity_threshold: medium
           fail_on_vulnerable: false
           report_format: sarif
+          pqc_api_key: ${{ secrets.PQC_API_KEY }}
 
       - name: Upload findings to Security tab
         if: always() && hashFiles('pqc-results.sarif') != ''
